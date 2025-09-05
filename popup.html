@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LifeClock Settings</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+        margin: 10px;
+        color: #ffffe6;
+        background: #06202a;
+        width: 240px;
+        box-sizing: border-box;
+      }
+      h3 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+      }
+      input[type='checkbox'] {
+        margin: 10px 4px 0 0;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+        color: #ffffe6;
+      }
+      input[type='date'],
+      input[type='time'],
+      input[type='text'],
+      select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        margin-top: 4px;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        margin-top: 12px;
+      }
+      button {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 0;
+        background: #0ea5e9;
+        color: white;
+        cursor: pointer;
+      }
+      .btn-clear {
+        background: #ef4444;
+      }
+      .small {
+        font-size: 12px;
+        color: #556;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; gap: 6px">
+      <image src="/icons/icon32.png" height="21" width="21" alt="icon"></image>
+      <h3>LifeClock Settings</h3>
+    </div>
+    <label for="date">Birthday (Date)</label>
+    <input id="date" type="date" />
+    <label for="time">Birthday (Time)</label>
+    <input id="time" type="time" step="1" />
+    <label for="headingText">Heading Text</label>
+    <input id="headingText" type="text" placeholder="Time Alive" />
+    <div style="display: flex">
+      <input id="quotes" type="checkbox" />
+      <label for="quotes">Show quotes</label>
+    </div>
+    <!-- <label for="bgMode">Background Mode</label>
+    <select id="bgMode">
+      <option value="starfield">Starfield & Constellations</option>
+      <option value="grid">Grid Horizon</option>
+      <option value="nebula">Nebula Vortex</option>
+      <option value="orbit">Revolve Around Sun</option>
+    </select>
+    <div class="small">
+      Tip: Leave time blank for midnight. Settings are synced to your Chrome
+      account (if signed in).
+    </div> -->
+    <div class="actions">
+      <button id="save">Save</button>
+      <button id="clear" class="btn-clear">Reset</button>
+    </div>
+    <script src="popup2.js"></script>
+  </body>
+</html>

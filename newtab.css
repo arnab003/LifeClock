@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'OrbitronLocal';
+  src: url('fonts/Orbitron-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'OrbitronLocal', system-ui, -apple-system, 'Segoe UI', Roboto,
+    Arial;
+  background: #030419;
+  color: #eaf8ff;
+  overflow: hidden;
+}
+:root {
+  --accent1: #00f0ff;
+  --accent2: #a24bff;
+  --glass: rgba(255, 255, 255, 0.04);
+  --muted: rgba(234, 248, 255, 0.7);
+}
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+.overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 28px;
+  box-sizing: border-box;
+}
+.heading {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--accent1) 0%,
+    var(--accent2) 40%,
+    #ffffff 50%,
+    var(--accent2) 60%,
+    var(--accent1) 100%
+  );
+  background-size: 200% 100%; /* allows animation across text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 9s linear infinite;
+}
+/* Gradient moving across text */
+@keyframes textShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+/* unit glass blocks */
+.age-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 1200px;
+}
+.unit {
+  width: 150px;
+  min-height: 120px;
+  border-radius: 14px;
+  padding: 14px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  transition: box-shadow 0.45s linear;
+}
+.num {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: 'OrbitronLocal', monospace;
+  transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.35s;
+}
+.num.flip {
+  transform: rotateX(90deg);
+  opacity: 0;
+}
+.label {
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--muted);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* HUD */
+.hud {
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.hud-top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+.hud .small {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.quotes {
+  font-size: 14px;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 0.5px var(--accent2);
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* credits */
+.credits {
+  position: fixed;
+  left: 14px;
+  bottom: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  z-index: 9;
+}
+
+.credits a {
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  .unit {
+    width: 110px;
+  }
+  .heading {
+    font-size: 28px;
+  }
+}

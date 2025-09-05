@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>New tab</title>
+    <!-- Explicit favicon link -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="icons/icon128.png"
+    />
+    <link rel="stylesheet" href="newtab.css" />
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <div class="overlay">
+      <div id="heading" class="heading">Time Alive</div>
+      <div
+        id="ageGrid"
+        class="age-grid"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+      <div class="hud" role="region" aria-label="Next birthday">
+        <div class="hud-top">
+          <image
+            src="/images/planet-orbit.svg"
+            height="39"
+            width="39"
+            alt="planet"
+          ></image>
+          <div style="font-size: 16px">Countdown to Your Next Orbit</div>
+        </div>
+        <div id="nextGrid" class="age-grid"></div>
+      </div>
+      <span id="timeQuotes" class="quotes"></span>
+    </div>
+    <div class="confetti" id="confetti"></div>
+    <div class="credits">
+      Made with ❤️ by
+      <a href="https://www.linkedin.com/in/arnab-saha-85907747/">Arnab</a>
+    </div>
+    <script src="life-bg2.js"></script>
+    <script src="life-newtab2.js"></script>
+  </body>
+</html>

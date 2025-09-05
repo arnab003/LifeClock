@@ -1,0 +1,33 @@
+<svg xml:space="preserve" viewBox="0 0 100 100" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1" style="margin: initial; display: block; shape-rendering: auto; background: transparent;" preserveAspectRatio="xMidYMid" width="200" height="200">
+  <g class="ldl-scale" style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);">
+
+    <!-- Circle 1 -->
+    <circle class="breath" r="27.5" cy="50" cx="49.6" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#000000" fill="#29ABE2" style="fill: rgb(0, 54, 102); stroke: rgb(0, 174, 255); stroke-width: 4.8;"></circle>
+
+    <!-- Path -->
+    <path class="breath" d="M10.9,27.4c-4.5,7.9,9.3,24.3,30.9,36.8s42.8,16.2,47.4,8.4c2-3.4,0.5-8.4-3.6-14" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#000000" fill="none" style="stroke: rgb(0, 174, 255); stroke-width: 4.8;"></path>
+
+    <!-- Circle 2 -->
+    <circle class="breath" r="5.4" cy="18.2" cx="22.6" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#000000" fill="#CCCCCC" style="fill: rgb(5, 15, 44); stroke: rgb(0, 174, 255); stroke-width: 4.8;"></circle>
+
+  </g>
+
+  <style>
+    /* Breathing animation */
+    .breath {
+      transform-origin: 50% 50%;
+      animation: breathe 2s ease-in-out infinite alternate;
+    }
+
+    /* Randomize animation duration/delay for each element */
+    .breath:nth-child(1) { animation-duration: 2s; animation-delay: 0s; }
+    .breath:nth-child(2) { animation-duration: 2.5s; animation-delay: 0.2s; }
+    .breath:nth-child(3) { animation-duration: 1.8s; animation-delay: 0.4s; }
+
+    @keyframes breathe {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</svg>
